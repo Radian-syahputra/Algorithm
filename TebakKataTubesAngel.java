@@ -165,8 +165,7 @@ public class TebakKataTubesAngel {
                 jumlahKalah = jumlahKalah + 1;
             }
 
-            System.out.println("Skor -> Menang: " + jumlahMenang
-                    + " | Kalah: " + jumlahKalah);
+            System.out.println("Skor -> Menang: " + jumlahMenang + " | Kalah: " + jumlahKalah);
 
             System.out.print("\nMain lagi? (y/n): ");
             mainLagi = input.nextLine().trim();
