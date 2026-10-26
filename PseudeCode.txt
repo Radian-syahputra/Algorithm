@@ -1,0 +1,53 @@
+
+ALGORITMA PermainanTebakAngka
+
+DEKLARASI:
+    angkaRahasia : integer
+    tebakan      : integer
+    percobaan    : integer
+    pilihan      : integer
+    batasAngka   : integer
+
+METHOD generateAngka(batasAngka):
+    hasilkan angka acak dari 1 sampai batasAngka
+    KEMBALIKAN angka acak
+
+METHOD evaluasiTebakan(tebakan, angkaRahasia):
+    JIKA tebakan < angkaRahasia MAKA
+        TAMPILKAN "Terlalu kecil!"
+    JIKA tebakan > angkaRahasia MAKA
+        TAMPILKAN "Terlalu besar!"
+    JIKA tebakan = angkaRahasia MAKA
+        TAMPILKAN "Selamat! Tebakan Anda benar."
+
+ALGORITMA UTAMA:
+    TAMPILKAN "=== PERMAINAN TEBAK ANGKA ==="
+    TAMPILKAN "1. Easy"
+    TAMPILKAN "2. Medium"
+    TAMPILKAN "3. Hard"
+    INPUT pilihan
+
+    SWITCH pilihan:
+        CASE 1:
+            batasAngka = 50
+        CASE 2:
+            batasAngka = 100
+        CASE 3:
+            batasAngka = 500
+        DEFAULT:
+            TAMPILKAN "Pilihan tidak valid"
+            SELESAI
+
+    angkaRahasia = generateAngka(batasAngka)
+    percobaan = 0
+
+    DO:
+        TAMPILKAN "Masukkan tebakan Anda:"
+        INPUT tebakan
+        percobaan = percobaan + 1
+        evaluasiTebakan(tebakan, angkaRahasia)
+    WHILE tebakan != angkaRahasia
+
+    TAMPILKAN "Jumlah percobaan: ", percobaan
+
+SELESAI
